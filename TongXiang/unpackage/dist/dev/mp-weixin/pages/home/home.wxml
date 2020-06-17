@@ -1,0 +1,1 @@
+<view class="home"><my-swiper vue-id="1da55560-1" swipers="{{swipers}}" swiperHeight="400" bind:__l="__l"></my-swiper></view>
