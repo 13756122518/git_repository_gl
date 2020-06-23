@@ -3,5 +3,312 @@
 // 编写完毕后对本文件点右键，可按配置规则创建表和添加数据
 
 {
-	"unicloud-test": {}
+	"tx_user": { // 用户
+		"data": [ 
+		   {
+			   "_id": "tx_user_1",
+			   "loginName": "admin",
+			   "password": "admin",
+			   "roleType": "0", //0:平台管理员 1:商家 2:业务员 3:招聘人员 4:求职者
+			   "name": "管理员",
+			   "phone": "13756122518",
+			   "address": "长春树勋小区"
+		   },{
+			   "_id": "tx_user_boss_1",
+			   "loginName": "boss",
+			   "password": "boss",
+			   "roleType": "1", 
+			   "name": "商家test",
+			   "phone": "13756122518",
+			   "address": "长春树勋小区"
+		   },{
+			   "_id": "tx_user_buss_1",
+			   "loginName": "buss",
+			   "password": "buss",
+			   "roleType": "2", 
+			   "name": "业务test",
+			   "phone": "13756122518",
+			   "address": "长春树勋小区"
+		   },{
+			   "_id": "tx_user_zp_1",
+			   "loginName": "zp",
+			   "password": "zp",
+			   "roleType": "3", 
+			   "name": "招聘test",
+			   "phone": "13756122518",
+			   "address": "长春树勋小区"
+		   }
+		],
+		"index": [{ // 索引
+			"IndexName": "index_tx_user", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "loginName", // 索引字段
+					"Direction": "2d" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				},{
+					"Name": "password", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	},
+	"tx_boss": { // 商家
+		"data": [ 
+		   {
+			   "_id": "tx_boss_1",
+			   "tx_user_id": "tx_user_boss_1", // 关联用户ID
+			   "name": "统祥测试商家",
+			   "phone": "13756122518",
+			   "legalPerson": "刘卓",  // 法人
+			   "mainBusiness": "人力资源", // 企业主营业务
+			   "contacts": "联系人",			   
+			   "isIntendedCustomers": 1, // 是否意向客户 0:否 1:是
+			   "personnelRequirements": "意向客户的人员需求",
+			   "isVisited":1 // 是否拜访过 0:否 1:是
+		   }
+		],
+		"index": [{ // 索引
+			"IndexName": "index_tx_boss", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "tx_user_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	},	
+	"tx_job_person": { // 求职者
+		"data": [ 
+		   {
+			   "_id": "tx_job_person_1",
+			   "name": "统祥招聘者1",
+			   "phone": "13756122518",
+			   "age": 18,  
+			   "height": 1.75, 
+			   "weight": 65.4,			   
+			   "education": "本科",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_job_person_2",
+			   "name": "统祥招聘者2",
+			   "phone": "13756122518",
+			   "age": 28,  
+			   "height": 1.85, 
+			   "weight": 69.4,			   
+			   "education": "本科",
+			   "remark": ""
+		   }
+		],
+		"index": [{ // 索引
+			"IndexName": "index_job_person", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "phone", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	},
+	"tx_work_type": { // 工作类型字典表
+		"data": [ 
+		   {
+			   "_id": "tx_work_type_1",
+			   "name": "兼职",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_work_type_2",
+			   "name": "短期工",
+			   "remark": ""
+		   }
+		]		
+	},
+	"tx_pay_type": { // 结算方式字典表
+		"data": [ 
+		   {
+			   "_id": "tx_pay_type_1",
+			   "name": "日结",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_pay_type_2",
+			   "name": "周结",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_pay_type_3",
+			   "name": "月结",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_pay_type_4",
+			   "name": "完工结",
+			   "remark": ""
+		   }
+		]		
+	},
+	"tx_work_time": { // 工作时间字典表
+		"data": [ 
+		   {
+			   "_id": "tx_work_time_1",
+			   "name": "元/天",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_work_time_2",
+			   "name": "元/周",
+			   "remark": ""
+		   },
+		   {
+			   "_id": "tx_work_time_3",
+			   "name": "元/月",
+			   "remark": ""
+		   }
+		]		
+	},
+	"tx_order_info": { // 招聘信息
+		"data": [ 
+		   {
+			   "_id": "tx_order_info_1",
+			   "work_type_name": "短期工", // 工作类型
+			   "pay_type_name": "周结", // 结算方式
+			   "work_time_name": "元/周",
+			   "name": "安保活动",
+			   "content": "安保活动内容",
+			   "address": "工作地点",
+			   "num": 10, // 需要人数
+			   "cost": 100, // 费用
+			   "time": "2020-06-25 10:00:00", // 活动日期
+			   "remark": ""
+		   }
+		]		
+	},
+	"tx_order": { // 订单
+		"data": [ 
+		   {
+			   "_id" :"tx_order_1",
+			   "order_info_id": "tx_order_info_1", // 招聘基本信息
+			   "order_user_boss_id": "tx_user_boss_1", // 商家
+			   "order_user_buss_id": "tx_user_buss_1", // 业务人员
+			   "status": 1,  // 订单状态：0:创建 1:审核通过 2:人员已满 3:上岗确认 4:完成 -1:取消
+			   "createDate": "2020-06-24 08:00:00", // 订单创建时间
+			   "examineDate": "2020-06-24 09:00:00", // 订单审核通过时间
+			   "confirmStartDate": "2020-06-25 08:30:00", // 订单确认开始时间
+			   "confirmEndDate": "2020-06-25 13:00:00", // 订单完成时间
+			   "isPayment": 1,  // 商家是否结款 1:是 0:否
+			   "qrCode": "https://weixin.qq.com/g/AwYAABO33Jn2GHqfJWZVDY1e0n9-5DBgTuX0JiaCSzV6PdHati1-JBwYjdBk6NZb",	// 群聊二维码		   
+			   "totalCost": 10000, // 总费用
+			   "commission":10, // 领队提成
+			   "cancelUserId": "tx_user_boss_1" // 订单取消人
+		   }
+		],
+		"index": [{ // 索引
+			"IndexName": "index_tx_order_boss", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [
+					{
+						"Name": "status", // 索引字段
+						"Direction": "2d" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+					},
+					{
+						"Name": "order_boss_id", // 索引字段
+						"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+					}
+					],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		},
+		{ // 索引
+			"IndexName": "index_tx_order_buss", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [
+					{
+						"Name": "status", // 索引字段
+						"Direction": "2d" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+					},
+					{
+						"Name": "order_user_buss_id", // 索引字段
+						"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+					}
+				],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		},
+		{ // 索引
+			"IndexName": "index_order_info_id", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "order_info_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	},
+	"tx_order_detail": { // 订单明细
+		"data": [ 
+		   {
+			   "_id": "tx_order_detail_1",
+			   "order_id": "tx_order_1", // 订单
+			   "order_job_person_id": "tx_job_person_1", // 求职者
+			   "order_user_zp_id": "tx_user_zp_1", // 招聘人员
+			   "boss_appraise": "商家评价", // 
+			   "boss_appraise_content": "商家评价内容", 
+			   "is_boss_visible": 1, // 商家评价是否可见 1:是 0:否
+			   "job_appraise": "求职者评价", //
+			   "job": "求职者评价内容", 
+			   "is_job_visible": 1, // 求职者评价是否可见 1:是 0:否
+			   "time": "2020-06-25 10:00:00" // 报名时间
+		   },
+		   {
+			   "_id": "tx_order_detail_2",
+			   "order_id": "tx_order_1", // 订单
+			   "order_job_person_id": "tx_job_person_2", // 求职者
+			   "order_user_zp_id": "tx_user_zp_1", // 招聘人员
+			   "boss_appraise": "商家评价2", // 
+			   "boss_appraise_content": "商家评价内容2", 
+			   "is_boss_visible": 1, // 商家评价是否可见 1:是 0:否
+			   "job_appraise": "求职者评价2", //
+			   "job": "求职者评价内容2", 
+			   "is_job_visible": 1, // 求职者评价是否可见 1:是 0:否
+			   "time": "2020-06-25 12:00:00" // 报名时间
+		   }
+		],
+		"index": [{ // 索引
+			"IndexName": "index_order_id", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "order_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		},
+		{ // 索引
+			"IndexName": "index_order_user_zp_id", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "order_user_zp_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		},
+		{ // 索引
+			"IndexName": "index_order_job_person_id", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "order_job_person_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序，2dsphere：地理位置
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}
+		]
+	}
+	
 }
