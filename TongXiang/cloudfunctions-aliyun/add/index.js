@@ -1,7 +1,8 @@
 'use strict';
 const db = uniCloud.database()
 exports.main = async (event, context) => {
-	const collection = db.collection('unicloud-test')
-	const res = await collection.add(event)
+	console.log("tableName:",event.tableName)
+	const collection = db.collection(event.tableName)
+	const res = await collection.add(event.data)
 	return res
 };

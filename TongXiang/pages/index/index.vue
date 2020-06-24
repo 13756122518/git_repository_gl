@@ -25,10 +25,10 @@
 		},
 		methods: {
 			add() {
-				this.$add("add", {
-					name: 'DCloud',
-					subType: 'uniCloud',
-					createTime: Date.now()
+				this.$dbcloud.add("tx_user", {
+					loginName: 'test',
+					password: 'test',					
+					createDate: "2020-06-23"
 				})
 			},
 			remove() {
@@ -54,53 +54,16 @@
 				})
 			},
 			update() {
-				uni.showLoading({
-					title: '处理中...'
-				})
-				uniCloud.callFunction({
-					name: 'update',
-					data: {
-						name: 'DCloud',
-						subType: 'html 5+',
-						createTime: Date.now()
-					}
-				}).then((res) => {
-					uni.hideLoading()
-					uni.showModal({
-						content: res.result.msg,
-						showCancel: false
-					})
-					console.log(res)
-				}).catch((err) => {
-					uni.hideLoading()
-					uni.showModal({
-						content: `更新操作执行失败，错误信息为：${err.message}`,
-						showCancel: false
-					})
-					console.error(err)
+				this.$dbcloud.updateById("tx_user","5ef18c87de1810004cf8ac29", {
+					loginName: 'test',
+					password: 'test',					
+					createDate: "2020-06-26"
 				})
 			},
-			get() {
-				uni.showLoading({
-					title: '处理中...'
-				})
-				uniCloud.callFunction({
-					name: 'get'
-				}).then((res) => {
-					uni.hideLoading()
-					uni.showModal({
-						content: `查询成功，获取数据列表为：${JSON.stringify(res.result.data)}`,
-						showCancel: false
-					})
-					console.log(res)
-				}).catch((err) => {
-					uni.hideLoading()
-					uni.showModal({
-						content: `查询失败，错误信息为：${err.message}`,
-						showCancel: false
-					})
-					console.error(err)
-				})
+			async get() {
+				// let res = await this.$dbcloud.findByConditions("tx_boss",{"isIntendedCustomers":1});
+				let res = await this.$dbcloud.findLookUpByConditions("tx_order","tx_order_detail","_id","order_id",{"_id":"tx_order_1"});
+				console.log(res[0])
 			},
 			useCommon() {
 				console.log('请确保自己已经阅读并按照公用模块文档操作 https://uniapp.dcloud.io/uniCloud/cf-common')

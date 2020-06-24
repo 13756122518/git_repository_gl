@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App'
-import {add} from "@/common/common.js"
-import {getList} from "@/common/common.js"
+import dbcloud from "@/common/common.js"
+// import {updateById} from "@/common/common.js"
 
-Vue.prototype.$add = add
-Vue.prototype.$getList = getList
+Vue.prototype.$dbcloud = new dbcloud()
+// Vue.prototype.$getList = getList
 Vue.config.productionTip = false
 
 App.mpType = 'app'

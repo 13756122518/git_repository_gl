@@ -12,7 +12,8 @@
 			   "roleType": "0", //0:平台管理员 1:商家 2:业务员 3:招聘人员 4:求职者
 			   "name": "管理员",
 			   "phone": "13756122518",
-			   "address": "长春树勋小区"
+			   "address": "长春树勋小区",
+			   "createDate": "2020-06-23"
 		   },{
 			   "_id": "tx_user_boss_1",
 			   "loginName": "boss",
@@ -20,7 +21,8 @@
 			   "roleType": "1", 
 			   "name": "商家test",
 			   "phone": "13756122518",
-			   "address": "长春树勋小区"
+			   "address": "长春树勋小区",
+			   "createDate": "2020-06-23"
 		   },{
 			   "_id": "tx_user_buss_1",
 			   "loginName": "buss",
@@ -28,7 +30,8 @@
 			   "roleType": "2", 
 			   "name": "业务test",
 			   "phone": "13756122518",
-			   "address": "长春树勋小区"
+			   "address": "长春树勋小区",
+			   "createDate": "2020-06-23"
 		   },{
 			   "_id": "tx_user_zp_1",
 			   "loginName": "zp",
@@ -36,7 +39,8 @@
 			   "roleType": "3", 
 			   "name": "招聘test",
 			   "phone": "13756122518",
-			   "address": "长春树勋小区"
+			   "address": "长春树勋小区",
+			   "createDate": "2020-06-23"
 		   }
 		],
 		"index": [{ // 索引
@@ -89,7 +93,8 @@
 			   "height": 1.75, 
 			   "weight": 65.4,			   
 			   "education": "本科",
-			   "remark": ""
+			   "remark": "",
+			   "createDate": "2020-06-23"
 		   },
 		   {
 			   "_id": "tx_job_person_2",
