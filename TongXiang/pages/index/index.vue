@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		<u-notice-bar :list="list" color="red"></u-notice-bar>
 		<view class="title">uniCloud 基础示例</view>
 		<view class="tips">
 			<view>1.在cloudfunctions目录右键创建并关联服务空间</view>
@@ -21,7 +22,9 @@
 <script>
 	export default {
 		data() {
-			return {}
+			return {
+				list:["寒雨连江","平那风格","分割三个"]
+			}
 		},
 		methods: {
 			add() {

@@ -175,10 +175,11 @@
 		   }
 		]		
 	},
-	"tx_order_info": { // 招聘信息
+
+	"tx_order": { // 订单
 		"data": [ 
 		   {
-			   "_id": "tx_order_info_1",
+			   "_id" :"tx_order_1",
 			   "work_type_name": "短期工", // 工作类型
 			   "pay_type_name": "周结", // 结算方式
 			   "work_time_name": "元/周",
@@ -188,15 +189,7 @@
 			   "num": 10, // 需要人数
 			   "cost": 100, // 费用
 			   "time": "2020-06-25 10:00:00", // 活动日期
-			   "remark": ""
-		   }
-		]		
-	},
-	"tx_order": { // 订单
-		"data": [ 
-		   {
-			   "_id" :"tx_order_1",
-			   "order_info_id": "tx_order_info_1", // 招聘基本信息
+			   "remark": "",
 			   "order_user_boss_id": "tx_user_boss_1", // 商家
 			   "order_user_buss_id": "tx_user_buss_1", // 业务人员
 			   "status": 1,  // 订单状态：0:创建 1:审核通过 2:人员已满 3:上岗确认 4:完成 -1:取消
@@ -208,6 +201,81 @@
 			   "qrCode": "https://weixin.qq.com/g/AwYAABO33Jn2GHqfJWZVDY1e0n9-5DBgTuX0JiaCSzV6PdHati1-JBwYjdBk6NZb",	// 群聊二维码		   
 			   "totalCost": 10000, // 总费用
 			   "commission":10, // 领队提成
+			   "cancelUserId": "tx_user_boss_1" // 订单取消人
+		   },
+		   {
+			   "_id" :"tx_order_2",
+			   "work_type_name": "短期工", // 工作类型
+			   "pay_type_name": "周结", // 结算方式
+			   "work_time_name": "元/周",
+			   "name": "安保活动2",
+			   "content": "安保活动内容2",
+			   "address": "工作地点",
+			   "num": 10, // 需要人数
+			   "cost": 100, // 费用
+			   "time": "2020-06-25 10:00:00", // 活动日期
+			   "remark": "",
+			   "order_user_boss_id": "tx_user_boss_1", // 商家
+			   "order_user_buss_id": "tx_user_buss_1", // 业务人员
+			   "status": 1,  // 订单状态：0:创建 1:审核通过 2:人员已满 3:上岗确认 4:完成 -1:取消
+			   "createDate": "2020-06-5 08:00:00", // 订单创建时间
+			   "examineDate": "2020-06-25 09:00:00", // 订单审核通过时间
+			   "confirmStartDate": "2020-06-26 08:30:00", // 订单确认开始时间
+			   "confirmEndDate": "2020-06-26 13:00:00", // 订单完成时间
+			   "isPayment": 1,  // 商家是否结款 1:是 0:否
+			   "qrCode": "https://weixin.qq.com/g/AwYAABO33Jn2GHqfJWZVDY1e0n9-5DBgTuX0JiaCSzV6PdHati1-JBwYjdBk6NZb",	// 群聊二维码		   
+			   "totalCost": 20000, // 总费用
+			   "commission":15, // 领队提成
+			   "cancelUserId": "tx_user_boss_1" // 订单取消人
+		   },
+		   {
+			   "_id" :"tx_order_3",
+			   "work_type_name": "短期工", // 工作类型
+			   "pay_type_name": "周结", // 结算方式
+			   "work_time_name": "元/周",
+			   "name": "安保活动3-安保活动内容工作地点",
+			   "content": "安保活动内容3",
+			   "address": "工作地点",
+			   "num": 10, // 需要人数
+			   "cost": 100, // 费用
+			   "time": "2020-06-25 10:00:00", // 活动日期
+			   "remark": "",
+			   "order_user_boss_id": "tx_user_boss_1", // 商家
+			   "order_user_buss_id": "tx_user_buss_1", // 业务人员
+			   "status": 1,  // 订单状态：0:创建 1:审核通过 2:人员已满 3:上岗确认 4:完成 -1:取消
+			   "createDate": "2020-06-5 08:00:00", // 订单创建时间
+			   "examineDate": "2020-06-25 09:00:00", // 订单审核通过时间
+			   "confirmStartDate": "2020-06-26 08:30:00", // 订单确认开始时间
+			   "confirmEndDate": "2020-06-26 13:00:00", // 订单完成时间
+			   "isPayment": 1,  // 商家是否结款 1:是 0:否
+			   "qrCode": "https://weixin.qq.com/g/AwYAABO33Jn2GHqfJWZVDY1e0n9-5DBgTuX0JiaCSzV6PdHati1-JBwYjdBk6NZb",	// 群聊二维码		   
+			   "totalCost": 20000, // 总费用
+			   "commission":15, // 领队提成
+			   "cancelUserId": "tx_user_boss_1" // 订单取消人
+		   },
+		   {
+			   "_id" :"tx_order_4",
+			   "work_type_name": "短期工", // 工作类型
+			   "pay_type_name": "周结", // 结算方式
+			   "work_time_name": "元/周",
+			   "name": "安保活动4-安保活动内容工作地点",
+			   "content": "安保活动内容4",
+			   "address": "工作地点",
+			   "num": 10, // 需要人数
+			   "cost": 100, // 费用
+			   "time": "2020-06-25 10:00:00", // 活动日期
+			   "remark": "",
+			   "order_user_boss_id": "tx_user_boss_1", // 商家
+			   "order_user_buss_id": "tx_user_buss_1", // 业务人员
+			   "status": 1,  // 订单状态：0:创建 1:审核通过 2:人员已满 3:上岗确认 4:完成 -1:取消
+			   "createDate": "2020-06-5 08:00:00", // 订单创建时间
+			   "examineDate": "2020-06-25 09:00:00", // 订单审核通过时间
+			   "confirmStartDate": "2020-06-26 08:30:00", // 订单确认开始时间
+			   "confirmEndDate": "2020-06-26 13:00:00", // 订单完成时间
+			   "isPayment": 1,  // 商家是否结款 1:是 0:否
+			   "qrCode": "https://weixin.qq.com/g/AwYAABO33Jn2GHqfJWZVDY1e0n9-5DBgTuX0JiaCSzV6PdHati1-JBwYjdBk6NZb",	// 群聊二维码		   
+			   "totalCost": 20000, // 总费用
+			   "commission":15, // 领队提成
 			   "cancelUserId": "tx_user_boss_1" // 订单取消人
 		   }
 		],

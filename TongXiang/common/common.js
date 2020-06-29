@@ -79,7 +79,8 @@ export default class dbcloud {
 
 	// export const findById = (name,findByValue) => {
 	// {"loginName":"test","password":"test"} key 字段名 value 字段值
-	findByConditions(name, onditions) {
+	// fields:{"_id":true,"name":true,"time":true,"status":true}
+	findByConditions(name, onditions,rownum,fields) {
 		return new Promise((resolve, reject) => {
 			uni.showLoading({
 				title: '处理中...'
@@ -88,7 +89,9 @@ export default class dbcloud {
 				name: 'findByConditions',
 				data: {
 					"tableName": name,
-					"onditions": onditions
+					"onditions": onditions,
+					"rownum":rownum,
+					"fields": fields
 				}
 			}).then((res) => {
 				uni.hideLoading()
