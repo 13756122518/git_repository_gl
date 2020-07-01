@@ -2,13 +2,8 @@
 	<view class="content">
 		<u-notice-bar :list="list" color="red"></u-notice-bar>
 		<view class="title">uniCloud 基础示例</view>
-		<view class="tips">
-			<view>1.在cloudfunctions目录右键创建并关联服务空间</view>
-			<view>2.在cloudfunctions目录内db_init.json上右键初始化云数据库</view>
-			<view>3.在cloudfunctions目录右键选择“上传所有云函数”</view>
-			<view>开始愉快的体验uniCloud吧！</view>
-		</view>
 		<view class="btn-list">
+			<button type="primary" @click="loginOut">退出登录</button>
 			<button type="primary" @click="add">新增一条数据</button>
 			<button type="primary" @click="remove">删除一条数据</button>
 			<button type="primary" @click="update">修改数据</button>
@@ -27,6 +22,17 @@
 			}
 		},
 		methods: {
+			loginOut() {
+				this.$u.vuex('user', [])	
+				uni.showModal({
+					content: `退出成功`,
+					showCancel: false
+				})
+				this.$u.route({
+					url: '/pages/login/login',
+					type: 'navigateTo'
+				})
+			},
 			add() {
 				this.$dbcloud.add("tx_user", {
 					loginName: 'test',
@@ -89,60 +95,12 @@
 				})
 			},
 			upload() {
-				new Promise((resolve, reject) => {
-					uni.chooseImage({
-						chooseImage: 1,
-						success: res => {
-							const path = res.tempFilePaths[0]
-							let ext
-							// #ifdef H5
-							ext = res.tempFiles[0].name.split('.').pop()
-							// #endif
-							// #ifndef H5
-							ext = res.tempFilePaths[0].split('.').pop()
-							// #endif
-							const options = {
-								filePath: path,
-								cloudPath: Date.now() + '.' + ext
-							}
-							resolve(options)
-						},
-						fail: () => {
-							reject(new Error('Fail_Cancel'))
-						}
-					})
-				}).then((options) => {
-					uni.showLoading({
-						title: '文件上传中...'
-					})
-					return uniCloud.uploadFile({
-						...options,
-						onUploadProgress(e) {
-							console.log(e)
-						}
-					})
-				}).then(res => {
-					uni.hideLoading()
-					console.log(res);
-					this.$add("addFeaturedCourses", {
-										fileId: res.fileID,
-										createTime: Date.now()
-									})
-					uni.showModal({
-						content: '图片上传成功，fileId为：' + res.fileID,
-						showCancel: false
-					})
-				}).catch((err) => {
-					uni.hideLoading()
-					console.log(err);
-					if (err.message !== 'Fail_Cancel') {
-						uni.showModal({
-							content: `图片上传失败，错误信息为：${err.message}`,
-							showCancel: false
-						})
-					}
-				})
+				this.$dbcloud.upload(this.updateCodeById)										
+			},
+			updateCodeById(fileID) {
+				this.$dbcloud.updateById("tx_order", "tx_order_4", {qrCode: fileID}) 	
 			}
+			
 		}
 	}
 </script>

@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/mySwiper":1};
+/******/ 		var cssChunks = {"components/uni-list":1,"uview-ui/components/u-cell-group/u-cell-group":1,"uview-ui/components/u-cell-item/u-cell-item":1,"uview-ui/components/u-form-item/u-form-item":1,"uview-ui/components/u-input/u-input":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-form/u-form":1,"uview-ui/components/u-notice-bar/u-notice-bar":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-column-notice/u-column-notice":1,"uview-ui/components/u-row-notice/u-row-notice":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/mySwiper":"components/mySwiper"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/uni-cell":"components/uni-cell","components/uni-list":"components/uni-list","uview-ui/components/u-cell-group/u-cell-group":"uview-ui/components/u-cell-group/u-cell-group","uview-ui/components/u-cell-item/u-cell-item":"uview-ui/components/u-cell-item/u-cell-item","uview-ui/components/u-form-item/u-form-item":"uview-ui/components/u-form-item/u-form-item","uview-ui/components/u-input/u-input":"uview-ui/components/u-input/u-input","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-form/u-form":"uview-ui/components/u-form/u-form","uview-ui/components/u-notice-bar/u-notice-bar":"uview-ui/components/u-notice-bar/u-notice-bar","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-column-notice/u-column-notice":"uview-ui/components/u-column-notice/u-column-notice","uview-ui/components/u-row-notice/u-row-notice":"uview-ui/components/u-row-notice/u-row-notice"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

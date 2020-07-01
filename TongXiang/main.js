@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import dbcloud from "@/common/common.js"
+import dbcloud from "@/common/dbcloud.js"
 //引入uview
 import uView from "uview-ui";
 Vue.use(uView);

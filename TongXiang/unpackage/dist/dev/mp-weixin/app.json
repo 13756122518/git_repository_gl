@@ -1,18 +1,19 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/login/login",
     "pages/index/index"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "统祥订单宝",
+    "navigationBarBackgroundColor": "#52c693",
+    "backgroundColor": "#52c693"
   },
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#318bf5",
+    "color": "#C0C4CC",
+    "selectedColor": "#fa436a",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -30,5 +31,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }
