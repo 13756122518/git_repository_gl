@@ -1,7 +1,7 @@
 <template>
 	<view class="page-news u-bg-gray">
 		<!-- <scroll-view :scroll-y="true" @scrolltoupper="upper" @scrolltolower="lower" style="height:300rpx"> -->
-		<uni-list class="listview" :scroll-top="scrollTop" :scroll-y="true" @scrolltolower="loadMore()" :style="'height:' + scrollViewHeight + 'px ;'">
+		<uni-list class="listview" :scroll-top="scrollTop" :scroll-y="true" @scrolltolower="loadMore()" >
 			<!-- <scroll-view :scroll-y="true" @scrolltolower="lower" :style="'height:' + scrollViewHeight + 'px ;'"> -->
 			<u-cell-group>
 				<!-- <u-cell-item icon="arrow-right-double" title="个人设置" value="新版本0"></u-cell-item> -->
@@ -22,7 +22,7 @@
 		data() {
 			return {
 				scrollTop: 0,
-				scrollViewHeight: 0,
+				// scrollViewHeight: 0,
 				isChange: 0,
 				isEnd: 0,
 				rownum: 5,
@@ -42,7 +42,7 @@
 				})
 				return;
 			}
-			this.scrollViewHeight = uni.getSystemInfoSync().windowHeight
+			// this.scrollViewHeight = uni.getSystemInfoSync().windowHeight
 			this.getlbList()
 		},
 		methods: {
@@ -114,6 +114,7 @@
 	}
 
 	.listview {
+		height: 100%;
 		position: absolute;
 		/* #ifndef APP-NVUE */
 		display: flex;

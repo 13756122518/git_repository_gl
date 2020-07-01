@@ -98,7 +98,7 @@ export default class dbcloud {
 	// name 表名	
 	// onditions {"loginName":"test","password":"test"} 检索条件 key 字段名 value 字段值 
 	// sort:{"time":-1} 排序 1 代表升序排列 -1 代表降序排列
-	// rownum: 分页 每页的记录数
+	// rownum: 分页 查询的记录数
 	// fields:{"_id":1,"name":1,"time":1,"status":1} 需要显示的字段
 	findByConditions(name, onditions,sort,rownum,fields) {
 		return new Promise((resolve, reject) => {
