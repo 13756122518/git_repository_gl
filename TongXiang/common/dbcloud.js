@@ -5,60 +5,65 @@ export default class dbcloud {
 	// name 表名
 	// data 新增的内容
 	add(name, data) {
-		uni.showLoading({
-			title: '处理中...'
-		})
-		uniCloud.callFunction({
-			name: "add",
-			data: {
-				"tableName": name,
-				"data": data
-			}
-		}).then((res) => {
-			uni.hideLoading()
-			uni.showToast({
-				icon: 'none',
-				title: '添加数据成功'
-			});
-		}).catch((err) => {
-			uni.hideLoading()
-			uni.showModal({
-				content: `添加数据失败，错误信息为：${err.message}`,
-				showCancel: false
+		return new Promise((resolve, reject) => {
+			uni.showLoading({
+				title: '处理中...'
+			})
+			uniCloud.callFunction({
+				name: "add",
+				data: {
+					"tableName": name,
+					"data": data
+				}
+			}).then((res) => {
+				uni.hideLoading()
+				uni.showToast({
+					icon: 'none',
+					title: '添加数据成功'
+				});
+				resolve(res.result.id)
+			}).catch((err) => {
+				uni.hideLoading()
+				uni.showModal({
+					content: `添加数据失败，错误信息为：${err.message}`,
+					showCancel: false
+				})
+				reject(null)
 			})
 		})
-
 	}
 
     // name 表名
 	// findByValue ID的值
 	// data 更新的内容
 	updateById(name, findByValue, data) {
-		console.log("update:", name)
-		uni.showLoading({
-			title: '处理中...'
-		})
-		uniCloud.callFunction({
-			name: "update",
-			data: {
-				"tableName": name,
-				"findByValue": findByValue,
-				"data": data
-			}
-		}).then((res) => {
-			uni.hideLoading()
-			uni.showToast({
-				icon: 'none',
-				title: '修改数据成功'
-			});
-			
-		}).catch((err) => {
-			uni.hideLoading()
-			uni.showModal({
-				content: `修改数据失败，错误信息为：${err.message}`,
-				showCancel: false
+		return new Promise((resolve, reject) => {
+			uni.showLoading({
+				title: '处理中...'
 			})
-			console.error(err)
+			uniCloud.callFunction({
+				name: "update",
+				data: {
+					"tableName": name,
+					"findByValue": findByValue,
+					"data": data
+				}
+			}).then((res) => {
+				uni.hideLoading()
+				uni.showToast({
+					icon: 'none',
+					title: '修改数据成功'
+				});
+				resolve(res.result.id)
+			}).catch((err) => {
+				uni.hideLoading()
+				uni.showModal({
+					content: `修改数据失败，错误信息为：${err.message}`,
+					showCancel: false
+				})
+				reject(null)
+				console.error(err)
+			})
 		})
 	}
 	
