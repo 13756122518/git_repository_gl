@@ -184,6 +184,7 @@
 			   "work_type_name": "短期工", // 工作类型
 			   "pay_type_name": "周结", // 结算方式
 			   "work_time_name": "元/周",
+			   "workTime":4,              // 工期
 			   "name": "安保活动",
 			   "content": "安保活动内容",
 			   "address": "工作地点",
@@ -209,6 +210,7 @@
 			   "work_type_name": "短期工", // 工作类型
 			   "pay_type_name": "周结", // 结算方式
 			   "work_time_name": "元/周",
+			   "workTime":4,              // 工期
 			   "name": "安保活动2",
 			   "content": "安保活动内容2",
 			   "address": "工作地点",
@@ -342,10 +344,26 @@
 			   "time": "2020-06-25 10:00:00" // 报名时间
 		   },
 		   {
-			   "_id": "tx_order_detail_2",
+		   			   "_id": "tx_order_detail_2",
+		   			   "order_id": "tx_order_2", // 订单
+		   			   "order_job_person_id": "tx_job_person_1", // 求职者
+		   			   "order_user_zp_id": "tx_user_zp_1", // 招聘人员
+		   			   "boss_appraise": "商家评价", // 
+		   			   "boss_appraise_content": "商家评价内容", 
+		   			   "is_boss_visible": 1, // 商家评价是否可见 1:是 0:否
+		   			   "job_appraise": "求职者评价", //
+		   			   "job": "求职者评价内容", 
+		   			   "is_job_visible": 1, // 求职者评价是否可见 1:是 0:否
+		   			   "is_boss_sign": 1, // 商家确认到岗 0:未确认到岗 1:确认到岗开始 2 确认到岗结束
+		   			   "boss_sign_starttime": "2020-06-25 10:00:00" ,// 确认到岗开始时间
+		   			   "boss_sign_endtime": "2020-06-25 16:00:00", // 确认到岗结束时间
+		   			   "time": "2020-06-25 10:00:00" // 报名时间
+		   },
+		   {
+			   "_id": "tx_order_detail_3",
 			   "order_id": "tx_order_1", // 订单
 			   "order_job_person_id": "tx_job_person_2", // 求职者
-			   "order_user_zp_id": "tx_user_zp_1", // 招聘人员
+			   "order_user_zp_id": "tx_user_zp_2", // 招聘人员
 			   "boss_appraise": "商家评价2", // 
 			   "boss_appraise_content": "商家评价内容2", 
 			   "is_boss_visible": 1, // 商家评价是否可见 1:是 0:否

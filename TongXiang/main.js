@@ -17,7 +17,8 @@ Vue.prototype.$dbcloud = new dbcloud()
 Vue.config.productionTip = false
 
 App.mpType = 'app'
-
+import tabBar from 'components/tabBar/tabBar.vue'
+Vue.component('tabBar', tabBar)
 const app = new Vue({
 	store,
 	...App

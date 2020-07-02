@@ -7,7 +7,7 @@
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "订单宝"
+				"navigationBarTitleText": "首页"
 			}
 		},
 		{
@@ -17,9 +17,15 @@
 			}
 		},
 		{
+			"path": "pages/merchants-release/merchants-release",
+			"style": {
+				"navigationBarTitleText": "发布招聘"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "uni-app"
 			}
 		}
 	],
@@ -28,28 +34,28 @@
 		"navigationBarTitleText": "统祥订单宝",
 		"navigationBarBackgroundColor": "#52c693",
 		"backgroundColor": "#52c693"
-	},
-	"tabBar": {
-		// "color": "#7A7E83",
-		// "selectedColor": "#318bf5",
-		// "borderStyle": "black",
-		// "backgroundColor": "#ffffff",
-		"color": "#C0C4CC",
-		"selectedColor": "#fa436a",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",	
-		//"position":"top",
-		"list": [{
-			"pagePath": "pages/home/home",
-			"iconPath": "static/images/tabbar_home_icon.png",
-			"selectedIconPath": "static/images/tabbar_home_icon_active.png",
-			"text": "首页"
-		}, {
-			"pagePath": "pages/index/index",
-			"iconPath": "static/images/tabbar_user_icon.png",
-			"selectedIconPath": "static/images/tabbar_user_icon_active.png",
-			"text": "我的"
-		}]
 	}
+	// "tabBar": {
+	// 	// "color": "#7A7E83",
+	// 	// "selectedColor": "#318bf5",
+	// 	// "borderStyle": "black",
+	// 	// "backgroundColor": "#ffffff",
+	// 	"color": "#C0C4CC",
+	// 	"selectedColor": "#fa436a",
+	// 	"borderStyle": "black",
+	// 	"backgroundColor": "#ffffff",	
+	// 	//"position":"top",
+	// 	"list": [{
+	// 		"pagePath": "pages/home/home",
+	// 		"iconPath": "static/images/tabbar_home_icon.png",
+	// 		"selectedIconPath": "static/images/tabbar_home_icon_active.png",
+	// 		"text": "首页"
+	// 	}, {
+	// 		"pagePath": "pages/index/index",
+	// 		"iconPath": "static/images/tabbar_user_icon.png",
+	// 		"selectedIconPath": "static/images/tabbar_user_icon_active.png",
+	// 		"text": "我的"
+	// 	}]
+	// }
 	
 }
